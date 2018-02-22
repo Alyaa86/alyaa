@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block base %}
+<div class="container">
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">{{service.name}}</li>
+		  <li class="list-group-item">Duration:  {{service.duration}}</li>
+		  <li class="list-group-item">description:  {{service.description}}</li>
+		</ul>
+	<a href="{% url 'update_form' service_id=service.id %}"><button type="button" class="btn btn-outline-success">Update</button></a>
+	<a href="{% url 'delete' service_id=service.id%}"><button type="button" class="btn btn-outline-primary">Delete</button></a>
+
+{% endblock base %}

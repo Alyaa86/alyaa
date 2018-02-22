@@ -1,0 +1,19 @@
+
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block base %}
+	<div class="container">
+	  <div class="row ">
+	    <div class="col-12">
+			<form action="{% url 'create_form' %}" method="POST" enctype="multipart/form-data">
+				{{create_form|crispy}}
+				{% csrf_token %}
+				<button type="submit" class="btn btn-outline-info">Add Service</button> 
+			</form>
+		</div>
+	  </div>
+	</div>
+
+{% endblock base %}
